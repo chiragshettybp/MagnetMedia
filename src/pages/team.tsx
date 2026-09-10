@@ -12,10 +12,10 @@ export default function Team() {
       />
 
       <Section className="pb-16">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4">
           {team.map((m) => (
             <div key={m.name} className="flex flex-col gap-6 rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-              <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-white/15 to-white/5">
+              <div className="flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-white/15 to-white/5">
                 {m.image ? (
                   <img src={m.image} alt={m.name} className="h-full w-full object-cover" />
                 ) : (

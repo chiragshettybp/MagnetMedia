@@ -1,7 +1,8 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { Pressable } from "@/components/ui/pressable";
 
 /* ---------------- WordsPullUp ---------------- */
 interface WordsPullUpProps {
@@ -91,19 +92,41 @@ const navItems = [
 ];
 
 const PrismaHero = () => {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const [videoOn, setVideoOn] = useState(false);
+
+  useEffect(() => {
+    const id = window.setTimeout(() => setVideoOn(true), 350);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const scale = useTransform(scrollYProgress, [0, 0.7], [1, 0.98]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.55]);
+
   return (
-    <section className="h-screen w-full">
+    <section ref={ref} className="h-dvh w-full">
       <div className="relative h-full w-full overflow-hidden">
+        <motion.div
+          className="absolute inset-0"
+          style={reduce ? undefined : { scale, opacity }}
+        >
         
-        {/* Background video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
-        />
+        {/* Background video — mounted after first paint to prioritize text LCP */}
+        {videoOn && (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 h-full w-full object-cover"
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+          />
+        )}
 
         {/* Noise overlay */}
         <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.7] mix-blend-overlay" />
@@ -113,10 +136,10 @@ const PrismaHero = () => {
 
         {/* Navbar */}
         <nav className="absolute left-0 right-0 top-0 z-20 flex items-center justify-between px-2 sm:px-4 md:px-8">
-          <Link to="/about/story" className="flex items-center gap-2 rounded-b-2xl bg-black py-2 pl-3 pr-5 md:pl-5 md:pr-8">
+          <Link to="/about/story" className="flex items-center gap-2 rounded-b-2xl bg-black py-2 pl-3 pr-5 transition-transform duration-150 active:scale-[0.97] md:pl-5 md:pr-8">
             <img src="/logo.png" alt="OutMaded logo" className="h-6 w-6 rounded-full object-cover sm:h-7 sm:w-7" />
             <span
-              className="text-[10px] transition-colors sm:text-xs md:text-sm"
+              className="text-[10px] transition-colors duration-200 sm:text-xs md:text-sm"
               style={{ color: "rgba(225, 224, 204, 0.8)" }}
             >
               Our Story
@@ -127,12 +150,14 @@ const PrismaHero = () => {
               <Link
                 key={item.to}
                 to={item.to}
-                className="text-[10px] transition-colors sm:text-xs md:text-sm"
+                className="text-[10px] transition-colors duration-200 sm:text-xs md:text-sm"
                 style={{ color: "rgba(225, 224, 204, 0.8)" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#E1E0CC")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(225, 224, 204, 0.8)")}
               >
-                {item.label}
+                <span className="inline-block transition-transform duration-150 active:scale-95">
+                  {item.label}
+                </span>
               </Link>
             ))}
           </div>
@@ -163,19 +188,22 @@ const PrismaHero = () => {
                 OutMaded is a student-led software and innovation startup built by college students who turn ideas, problems, and opportunities into real, usable digital products. We combine software development, modern technology, and AI to make product development faster, smarter, and easier—from the first idea to a working product.
               </motion.p>
 
-              <Link
-                to="/start-project"
-                className="group inline-flex items-center gap-2 self-start rounded-full bg-primary py-1 pl-5 pr-1 text-sm font-medium text-black transition-all hover:gap-3 sm:text-base"
-              >
-                Join the Build
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-black transition-transform group-hover:scale-110 sm:h-10 sm:w-10">
-                  <ArrowRight className="h-4 w-4" style={{ color: "#E1E0CC" }} />
-                </span>
+              <Link to="/start-project" className="inline-flex self-start">
+                <Pressable
+                  pressScale={0.97}
+                  className="group inline-flex items-center gap-2 rounded-full bg-primary py-1 pl-5 pr-1 text-sm font-medium text-black transition-all duration-200 hover:gap-3 sm:text-base"
+                >
+                  Join the Build
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-black transition-transform duration-200 group-hover:scale-110 sm:h-10 sm:w-10">
+                    <ArrowRight className="h-4 w-4" style={{ color: "#E1E0CC" }} />
+                  </span>
+                </Pressable>
               </Link>
 
             </div>
           </div>
         </div>
+        </motion.div>
       </div>
     </section>
   );

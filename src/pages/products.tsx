@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/ui/page-layout";
 import { PageHero, Section, SectionTitle, QuoteBlock, CTASection, GhostLink } from "@/components/ui/site-sections";
+import { Reveal } from "@/components/motion/reveal";
 import { products } from "@/lib/site-data";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -16,12 +17,12 @@ export default function Products() {
       <Section className="pb-16">
         <SectionTitle eyebrow="Live" title="Products in the world" text="Everything we ship is real and honestly labelled — Live, Beta, Building, or Experiment." />
         <div className="grid gap-4 md:grid-cols-3">
-          {products.map((p) => (
-            <Link
-              key={p.slug}
-              to={`/products/${p.slug}`}
-              className="group flex flex-col justify-between gap-6 rounded-3xl border border-white/10 bg-white/[0.02] p-6 transition-colors hover:border-white/25"
-            >
+          {products.map((p, i) => (
+            <Reveal key={p.slug} delay={i * 0.05} className="h-full">
+              <Link
+                to={`/products/${p.slug}`}
+                className="group flex h-full flex-col justify-between gap-6 rounded-3xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-200 hover:border-white/25 active:scale-[0.985]"
+              >
               <div className="flex items-start justify-between">
                 <span
                   className="rounded-full border border-white/15 px-3 py-1 text-xs"
@@ -40,6 +41,7 @@ export default function Products() {
                 </p>
               </div>
             </Link>
+            </Reveal>
           ))}
         </div>
       </Section>

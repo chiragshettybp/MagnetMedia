@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/ui/page-layout";
 import { PageHero, Section, CTASection, QuoteBlock } from "@/components/ui/site-sections";
+import { Reveal } from "@/components/motion/reveal";
 import { solutions } from "@/lib/site-data";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -16,11 +17,11 @@ export default function Solutions() {
       <Section className="pb-16">
         <div className="grid gap-4 md:grid-cols-2">
           {solutions.map((s, i) => (
-            <Link
-              key={s.slug}
-              to={`/solutions/${s.slug}`}
-              className="group flex flex-col justify-between gap-8 rounded-3xl border border-white/10 bg-white/[0.02] p-6 transition-colors hover:border-white/25 md:p-8"
-            >
+            <Reveal key={s.slug} delay={i * 0.05} className="h-full">
+              <Link
+                to={`/solutions/${s.slug}`}
+                className="group flex h-full flex-col justify-between gap-8 rounded-3xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-200 hover:border-white/25 active:scale-[0.985] md:p-8"
+              >
               <div className="flex items-start justify-between">
                 <span className="text-xs" style={{ color: "rgba(225, 224, 204, 0.4)" }}>
                   {String(i + 1).padStart(2, "0")}
@@ -36,6 +37,7 @@ export default function Solutions() {
                 </p>
               </div>
             </Link>
+            </Reveal>
           ))}
         </div>
       </Section>

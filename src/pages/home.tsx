@@ -1,13 +1,13 @@
 import { PrismaHero } from "@/components/ui/prisma-hero";
-import { SiteFooter } from "@/components/ui/site-footer";
+import { LazyFooter } from "@/components/ui/lazy-footer";
 
 export default function Home() {
   return (
     <div className="dark min-h-screen bg-black">
-      <div className="sticky top-0 h-screen w-full">
+      <div className="sticky top-0 h-dvh w-full">
         <PrismaHero />
       </div>
-      <SiteFooter />
+      <LazyFooter />
     </div>
   );
 }

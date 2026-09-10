@@ -15,15 +15,31 @@ export default function Team() {
         <div className="grid gap-4 md:grid-cols-3">
           {team.map((m) => (
             <div key={m.name} className="flex flex-col gap-6 rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-white/15 to-white/5">
-                <span className="text-xs font-medium" style={{ color: "#E1E0CC" }}>
-                  {m.name.slice(0, 2).toUpperCase()}
-                </span>
+              <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-white/15 to-white/5">
+                {m.image ? (
+                  <img src={m.image} alt={m.name} className="h-full w-full object-cover" />
+                ) : (
+                  <span className="text-xs font-medium" style={{ color: "#E1E0CC" }}>
+                    {m.name.slice(0, 2).toUpperCase()}
+                  </span>
+                )}
               </div>
               <div>
-                <h3 className="text-lg font-medium tracking-tight" style={{ color: "#E1E0CC" }}>
-                  {m.name}
-                </h3>
+                {m.url ? (
+                  <a
+                    href={m.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-lg font-medium tracking-tight hover:underline"
+                    style={{ color: "#E1E0CC" }}
+                  >
+                    {m.name}
+                  </a>
+                ) : (
+                  <h3 className="text-lg font-medium tracking-tight" style={{ color: "#E1E0CC" }}>
+                    {m.name}
+                  </h3>
+                )}
                 <p className="text-xs" style={{ color: "rgba(225, 224, 204, 0.5)" }}>
                   {m.role}
                 </p>

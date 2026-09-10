@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Mail } from "lucide-react";
+import { Pressable } from "@/components/ui/pressable";
+import { Reveal } from "@/components/motion/reveal";
 import {
   footerServices,
   footerSolutions,
@@ -9,7 +11,7 @@ import {
   footerLegal,
 } from "@/lib/site-data";
 
-const linkCls = "text-xs transition-colors";
+const linkCls = "text-xs transition-colors duration-200";
 const linkStyle = { color: "rgba(225, 224, 204, 0.7)" as const };
 
 const columns = [
@@ -23,7 +25,7 @@ const columns = [
 export const SiteFooter = () => {
   return (
     <footer className="relative w-full bg-black" style={{ color: "#E1E0CC" }}>
-      <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-24">
+      <Reveal y={16} duration={0.6} className="mx-auto max-w-7xl px-4 pt-16 pb-safe-4 md:px-8 md:pt-24 md:pb-safe-6">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
@@ -39,12 +41,14 @@ export const SiteFooter = () => {
               OutMaded is a student-led software and innovation startup that turns ideas into real
               digital products using software and AI.
             </p>
-            <Link
-              to="/contact"
-              className="group inline-flex w-fit items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-black transition-all hover:gap-3"
-            >
-              <Mail className="h-4 w-4" />
-              Get in touch
+            <Link to="/contact" className="inline-flex w-fit">
+              <Pressable
+                pressScale={0.97}
+                className="group inline-flex w-fit items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:gap-3"
+              >
+                <Mail className="h-4 w-4" />
+                Get in touch
+              </Pressable>
             </Link>
           </div>
 
@@ -80,15 +84,15 @@ export const SiteFooter = () => {
             ))}
             <Link
               to="/start-project"
-              className="inline-flex items-center gap-1.5 text-xs font-medium hover:text-white"
+              className="group inline-flex items-center gap-1.5 text-xs font-medium transition-all duration-200 hover:text-white"
               style={{ color: "#E1E0CC" }}
             >
               Start a Project
-              <ArrowRight className="h-3.5 w-3.5" />
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </div>
         </div>
-      </div>
+      </Reveal>
     </footer>
   );
 };

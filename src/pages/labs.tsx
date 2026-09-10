@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/ui/page-layout";
 import { PageHero, Section, QuoteBlock, CTASection } from "@/components/ui/site-sections";
+import { Reveal } from "@/components/motion/reveal";
 
 export default function Labs() {
   return (
@@ -20,20 +21,22 @@ export default function Labs() {
             "Prototypes",
             "Research projects",
           ].map((area, i) => (
-            <div key={area} className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-              <p className="text-xs" style={{ color: "rgba(225, 224, 204, 0.4)" }}>
-                {String(i + 1).padStart(2, "0")}
-              </p>
-              <p className="mt-3 text-lg font-medium tracking-tight" style={{ color: "#E1E0CC" }}>
-                {area}
-              </p>
-              <div className="mt-6 flex flex-col gap-1 text-sm" style={{ color: "rgba(225, 224, 204, 0.6)" }}>
-                <p>Experiment</p>
-                <p className="pl-4">Why we built it</p>
-                <p className="pl-8">What we learned</p>
-                <p className="pl-12">What happens next</p>
+            <Reveal key={area} delay={i * 0.05} className="h-full">
+              <div className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.02] p-6">
+                <p className="text-xs" style={{ color: "rgba(225, 224, 204, 0.4)" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <p className="mt-3 text-lg font-medium tracking-tight" style={{ color: "#E1E0CC" }}>
+                  {area}
+                </p>
+                <div className="mt-6 flex flex-col gap-1 text-sm" style={{ color: "rgba(225, 224, 204, 0.6)" }}>
+                  <p>Experiment</p>
+                  <p className="pl-4">Why we built it</p>
+                  <p className="pl-8">What we learned</p>
+                  <p className="pl-12">What happens next</p>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Section>

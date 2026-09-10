@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/site-sections";
 import { aiTopics } from "@/lib/site-data";
 import { Link } from "react-router-dom";
+import { Reveal } from "@/components/motion/reveal";
 
 export default function Ai() {
   return (
@@ -21,11 +22,11 @@ export default function Ai() {
       <Section className="pb-16">
         <div className="grid gap-4 md:grid-cols-3">
           {aiTopics.map((a, i) => (
-            <Link
-              key={a.slug}
-              to={`/ai/${a.slug}`}
-              className="group flex flex-col justify-between gap-6 rounded-3xl border border-white/10 bg-white/[0.02] p-6 transition-colors hover:border-white/25"
-            >
+            <Reveal key={a.slug} delay={i * 0.05} className="h-full">
+              <Link
+                to={`/ai/${a.slug}`}
+                className="group flex h-full flex-col justify-between gap-6 rounded-3xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-200 hover:border-white/25 active:scale-[0.985]"
+              >
               <span className="text-xs" style={{ color: "rgba(225, 224, 204, 0.4)" }}>
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -36,6 +37,7 @@ export default function Ai() {
                 {a.short}
               </p>
             </Link>
+            </Reveal>
           ))}
         </div>
       </Section>

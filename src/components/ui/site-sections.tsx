@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Pressable } from "@/components/ui/pressable";
+import { Reveal } from "@/components/motion/reveal";
 import type { ReactNode } from "react";
 
 export const PageHero = ({
@@ -60,7 +62,7 @@ export const Section = ({
 );
 
 export const SectionTitle = ({ eyebrow, title, text }: { eyebrow?: string; title: string; text?: string }) => (
-  <div className="mb-8 flex flex-col gap-3 md:mb-12 md:flex-row md:items-end md:justify-between">
+  <Reveal className="mb-8 flex flex-col gap-3 md:mb-12 md:flex-row md:items-end md:justify-between">
     <div>
       {eyebrow && (
         <p className="mb-2 text-xs font-medium uppercase tracking-widest" style={{ color: "rgba(225, 224, 204, 0.45)" }}>
@@ -76,43 +78,49 @@ export const SectionTitle = ({ eyebrow, title, text }: { eyebrow?: string; title
         {text}
       </p>
     )}
-  </div>
+  </Reveal>
 );
 
 export const ArrowButton = ({ to, children }: { to: string; children: ReactNode }) => (
-  <Link
-    to={to}
-    className="group inline-flex w-fit items-center gap-2 rounded-full bg-primary py-1.5 pl-5 pr-1.5 text-sm font-medium text-black transition-all hover:gap-3"
-  >
-    {children}
-    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black transition-transform group-hover:scale-110">
-      <ArrowRight className="h-4 w-4" style={{ color: "#E1E0CC" }} />
-    </span>
+  <Link to={to} className="inline-flex w-fit">
+    <Pressable
+      pressScale={0.97}
+      className="group inline-flex w-fit items-center gap-2 rounded-full bg-primary py-1.5 pl-5 pr-1.5 text-sm font-medium text-black transition-all duration-200 hover:gap-3"
+    >
+      {children}
+      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black transition-transform duration-200 group-hover:scale-110">
+        <ArrowRight className="h-4 w-4" style={{ color: "#E1E0CC" }} />
+      </span>
+    </Pressable>
   </Link>
 );
 
 export const GhostLink = ({ to, children }: { to: string; children: ReactNode }) => (
-  <Link
-    to={to}
-    className="group inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
-    style={{ color: "#E1E0CC" }}
-  >
-    {children}
-    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+  <Link to={to} className="inline-flex">
+    <Pressable
+      pressScale={0.97}
+      className="group inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:text-white"
+      style={{ color: "#E1E0CC" }}
+    >
+      {children}
+      <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+    </Pressable>
   </Link>
 );
 
 export const ListGrid = ({ items }: { items: string[] }) => (
   <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
     {items.map((i, idx) => (
-      <div key={i} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-3">
-        <span className="mt-0.5 text-xs" style={{ color: "rgba(225, 224, 204, 0.4)" }}>
-          {String(idx + 1).padStart(2, "0")}
-        </span>
-        <span className="text-sm" style={{ color: "rgba(225, 224, 204, 0.85)" }}>
-          {i}
-        </span>
-      </div>
+      <Reveal key={i} delay={idx * 0.04} y={10}>
+        <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-3">
+          <span className="mt-0.5 text-xs" style={{ color: "rgba(225, 224, 204, 0.4)" }}>
+            {String(idx + 1).padStart(2, "0")}
+          </span>
+          <span className="text-sm" style={{ color: "rgba(225, 224, 204, 0.85)" }}>
+            {i}
+          </span>
+        </div>
+      </Reveal>
     ))}
   </div>
 );
@@ -151,7 +159,7 @@ export const CTASection = ({
   cta: string;
 }) => (
   <Section className="pb-20 md:pb-28">
-    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-transparent px-6 py-14 text-center md:px-12 md:py-20">
+    <Reveal className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-transparent px-6 py-14 text-center md:px-12 md:py-20">
       <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.35] mix-blend-overlay" />
       <h2 className="mx-auto max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl md:text-5xl" style={{ color: "#E1E0CC" }}>
         {title}
@@ -164,17 +172,19 @@ export const CTASection = ({
       <div className="mt-8 flex justify-center">
         <ArrowButton to={to}>{cta}</ArrowButton>
       </div>
-    </div>
+    </Reveal>
   </Section>
 );
 
 export const QuoteBlock = ({ text }: { text: string }) => (
-  <blockquote
-    className="border-l-2 pl-5 text-lg font-medium leading-snug sm:text-xl"
-    style={{ borderColor: "rgba(225, 224, 204, 0.3)", color: "#E1E0CC" }}
-  >
-    {text}
-  </blockquote>
+  <Reveal>
+    <blockquote
+      className="border-l-2 pl-5 text-lg font-medium leading-snug sm:text-xl"
+      style={{ borderColor: "rgba(225, 224, 204, 0.3)", color: "#E1E0CC" }}
+    >
+      {text}
+    </blockquote>
+  </Reveal>
 );
 
 export const Pill = ({ children }: { children: ReactNode }) => (

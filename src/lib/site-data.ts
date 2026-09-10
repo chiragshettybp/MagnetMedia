@@ -446,11 +446,21 @@ export const techAreas = [
   },
 ];
 
-export const team = [
+export type TeamMember = {
+  name: string;
+  role: string;
+  bio: string;
+  image?: string;
+  url?: string;
+};
+
+export const team: TeamMember[] = [
   {
-    name: "Founder",
+    name: "Chirag Shetty",
     role: "Founder",
     bio: "Started OutMaded to turn ideas into real software while still studying.",
+    image: "/founder.jpg",
+    url: "https://chiragbp-doc.lovable.app",
   },
   {
     name: "Co-Founder",

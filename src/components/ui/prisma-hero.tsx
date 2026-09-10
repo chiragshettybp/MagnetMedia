@@ -93,7 +93,7 @@ const navItems = [
 const PrismaHero = () => {
   return (
     <section className="h-screen w-full">
-      <div className="relative h-full w-full overflow-hidden rounded-2xl md:rounded-[2rem]">
+      <div className="relative h-full w-full overflow-hidden">
         
         {/* Background video */}
         <video

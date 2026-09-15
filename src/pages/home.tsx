@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       {/* ---- 1. Services Overview ---- */}
-      <section className="relative z-10 bg-black">
+      <section className="relative z-10 border-t-2 border-white/20 bg-black">
         <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
           <Reveal className="mb-12 md:mb-16">
             <p
@@ -79,7 +79,7 @@ export default function Home() {
       </section>
 
       {/* ---- 2. Social Proof ---- */}
-      <section className="relative z-10 bg-black">
+      <section className="relative z-10 border-t-2 border-white/20 bg-black">
         <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
           <Reveal className="mb-12 md:mb-16">
             <p
@@ -124,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* ---- 3. Call to Action ---- */}
-      <section className="relative z-10 bg-black">
+      <section className="relative z-10 border-t-2 border-white/20 bg-black">
         <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
           <Reveal>
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-transparent">

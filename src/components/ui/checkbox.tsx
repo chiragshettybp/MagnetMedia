@@ -19,7 +19,7 @@ export const Checkbox = ({ checked, onChange, label, className }: CheckboxProps)
     className={cn(
       "flex items-center gap-2.5 rounded-full border px-4 py-2 text-left text-xs transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]",
       checked
-        ? "border-[#E1E0CC]/30 bg-[#E1E0CC]/[0.08]"
+        ? "border-[#C0C0C0]/30 bg-[#C0C0C0]/[0.08]"
         : "border-white/15 bg-transparent hover:border-white/25 hover:bg-white/[0.02]",
       className
     )}
@@ -29,7 +29,7 @@ export const Checkbox = ({ checked, onChange, label, className }: CheckboxProps)
       <span
         className={cn(
           "h-full w-full rounded-[5px] border transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]",
-          checked ? "border-[#E1E0CC] bg-[#E1E0CC]" : "border-white/30"
+          checked ? "border-[#C0C0C0] bg-[#C0C0C0]" : "border-white/30"
         )}
       >
         <AnimatePresence>
@@ -58,6 +58,6 @@ export const Checkbox = ({ checked, onChange, label, className }: CheckboxProps)
         </AnimatePresence>
       </span>
     </span>
-    <span style={{ color: "rgba(225, 224, 204, 0.8)" }}>{label}</span>
+    <span style={{ color: "rgba(192, 192, 192, 0.8)" }}>{label}</span>
   </motion.button>
 );

@@ -7,8 +7,8 @@ export default function Team() {
     <PageLayout>
       <PageHero
         eyebrow="Team"
-        title="A small team building big ideas."
-        text="We're a college-student-founded team. We don't imitate a 500-person company — we build like a startup: fast, honest, and learning as we go."
+        title="A small team that makes brands magnetic."
+        text="We don't imitate a 500-person company — we build like a small, focused agency: fast, honest, and obsessed with attention."
       />
 
       <Section className="pb-16">
@@ -19,7 +19,7 @@ export default function Team() {
                 {m.image ? (
                   <img src={m.image} alt={m.name} className="h-full w-full object-cover" />
                 ) : (
-                  <span className="text-xs font-medium" style={{ color: "#E1E0CC" }}>
+                  <span className="text-xs font-medium" style={{ color: "#C0C0C0" }}>
                     {m.name.slice(0, 2).toUpperCase()}
                   </span>
                 )}
@@ -31,20 +31,20 @@ export default function Team() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block text-lg font-medium tracking-tight hover:underline"
-                    style={{ color: "#E1E0CC" }}
+                    style={{ color: "#C0C0C0" }}
                   >
                     {m.name}
                   </a>
                 ) : (
-                  <h3 className="text-lg font-medium tracking-tight" style={{ color: "#E1E0CC" }}>
+                  <h3 className="text-lg font-medium tracking-tight" style={{ color: "#C0C0C0" }}>
                     {m.name}
                   </h3>
                 )}
-                <p className="text-xs" style={{ color: "rgba(225, 224, 204, 0.5)" }}>
+                <p className="text-xs" style={{ color: "rgba(192, 192, 192, 0.5)" }}>
                   {m.role}
                 </p>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
                 {m.bio}
               </p>
             </div>
@@ -53,7 +53,7 @@ export default function Team() {
       </Section>
 
       <Section className="pb-20">
-        <SectionTitle eyebrow="More" title="About OutMaded" />
+        <SectionTitle eyebrow="More" title="About Magnet Media" />
         <div className="flex flex-wrap gap-3">
           <GhostLink to="/about">About</GhostLink>
           <GhostLink to="/about/story">Our story</GhostLink>

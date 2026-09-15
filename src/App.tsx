@@ -5,21 +5,13 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 const Home = lazy(() => import("@/pages/home"));
 const Services = lazy(() => import("@/pages/services"));
 const ServicePage = lazy(() => import("@/pages/service"));
-const Solutions = lazy(() => import("@/pages/solutions"));
-const SolutionPage = lazy(() => import("@/pages/solution"));
 const Work = lazy(() => import("@/pages/work"));
 const WorkProjectPage = lazy(() => import("@/pages/work-project"));
-const Products = lazy(() => import("@/pages/products"));
-const ProductPage = lazy(() => import("@/pages/product"));
-const Labs = lazy(() => import("@/pages/labs"));
 const About = lazy(() => import("@/pages/about"));
 const Story = lazy(() => import("@/pages/story"));
 const Mission = lazy(() => import("@/pages/mission"));
 const Team = lazy(() => import("@/pages/team"));
 const Process = lazy(() => import("@/pages/process"));
-const Technology = lazy(() => import("@/pages/technology"));
-const Ai = lazy(() => import("@/pages/ai"));
-const AiTopicPage = lazy(() => import("@/pages/ai-topic"));
 const StartProject = lazy(() => import("@/pages/start-project"));
 const Contact = lazy(() => import("@/pages/contact"));
 const Faq = lazy(() => import("@/pages/faq"));
@@ -58,15 +50,8 @@ function AnimatedRoutes() {
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServicePage />} />
 
-            <Route path="/solutions" element={<Solutions />} />
-            <Route path="/solutions/:slug" element={<SolutionPage />} />
-
             <Route path="/work" element={<Work />} />
             <Route path="/work/:slug" element={<WorkProjectPage />} />
-
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/labs" element={<Labs />} />
-            <Route path="/products/:slug" element={<ProductPage />} />
 
             <Route path="/about" element={<About />} />
             <Route path="/about/story" element={<Story />} />
@@ -74,10 +59,6 @@ function AnimatedRoutes() {
             <Route path="/about/team" element={<Team />} />
 
             <Route path="/process" element={<Process />} />
-            <Route path="/technology" element={<Technology />} />
-
-            <Route path="/ai" element={<Ai />} />
-            <Route path="/ai/:slug" element={<AiTopicPage />} />
 
             <Route path="/start-project" element={<StartProject />} />
             <Route path="/contact" element={<Contact />} />

@@ -2,13 +2,12 @@ import { PageLayout } from "@/components/ui/page-layout";
 import { PageHero, Section, SectionTitle, CTASection, GhostLink } from "@/components/ui/site-sections";
 
 const timeline = [
-  { title: "Students", text: "It started with college students who wanted to build real things — not just study them." },
-  { title: "Ideas", text: "We kept having ideas. Then we kept turning them into working software." },
-  { title: "First projects", text: "Websites, tools, systems, and experiments — each one taught us more." },
-  { title: "Experiments", text: "We started playing with AI, automation, and unconventional ideas." },
-  { title: "OutMaded", text: "The experiments became a company. A student-led software and innovation startup." },
-  { title: "Products", text: "Now we build for others — and for ourselves." },
-  { title: "Future", text: "We keep building. That's the whole plan." },
+  { title: "The Idea", text: "Great marketing starts with attention — not noise." },
+  { title: "The Name", text: "Magnet Media — a name built around the idea of pull." },
+  { title: "The Services", text: "Ads, content, video, social, and strategy — all under one roof." },
+  { title: "The Approach", text: "Attract → Engage → Grow." },
+  { title: "The Agency", text: "A creative and performance marketing company for brands that want to be noticed." },
+  { title: "The Future", text: "We keep making brands magnetic." },
 ];
 
 export default function Story() {
@@ -16,8 +15,8 @@ export default function Story() {
     <PageLayout>
       <PageHero
         eyebrow="Our Story"
-        title="A story still being written."
-        text="We're building while we're learning. That gives us a different perspective — and a different pace."
+        title="Built around attention."
+        text="We noticed something early — the brands that win online aren't louder, they're magnetic."
       />
 
       <Section className="pb-16">
@@ -27,7 +26,7 @@ export default function Story() {
               <div className="flex flex-col items-center">
                 <span
                   className="text-xs font-medium"
-                  style={{ color: "rgba(225, 224, 204, 0.5)" }}
+                  style={{ color: "rgba(192, 192, 192, 0.5)" }}
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -36,10 +35,10 @@ export default function Story() {
                 )}
               </div>
               <div className="flex-1 pb-12">
-                <h3 className="text-xl font-medium tracking-tight" style={{ color: "#E1E0CC" }}>
+                <h3 className="text-xl font-medium tracking-tight" style={{ color: "#C0C0C0" }}>
                   {t.title}
                 </h3>
-                <p className="mt-2 max-w-xl text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+                <p className="mt-2 max-w-xl text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
                   {t.text}
                 </p>
               </div>
@@ -49,7 +48,7 @@ export default function Story() {
       </Section>
 
       <Section className="pb-20">
-        <SectionTitle eyebrow="Continue" title="More about OutMaded" />
+        <SectionTitle eyebrow="Continue" title="More about Magnet Media" />
         <div className="flex flex-wrap gap-3">
           <GhostLink to="/about">About</GhostLink>
           <GhostLink to="/about/mission">Mission</GhostLink>
@@ -58,10 +57,10 @@ export default function Story() {
       </Section>
 
       <CTASection
-        title="Part of the story next?"
-        text="Every product at OutMaded starts the same way — with a story and a build."
+        title="Make your brand the next chapter."
+        text="We work with ambitious brands that want to stop the scroll and start growing."
         to="/start-project"
-        cta="Write the next chapter"
+        cta="Work with us"
       />
     </PageLayout>
   );

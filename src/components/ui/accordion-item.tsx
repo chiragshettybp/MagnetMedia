@@ -23,7 +23,7 @@ export const AccordionItem = ({ question, answer, isOpen, onToggle }: AccordionI
       className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
       style={{ WebkitTapHighlightColor: "transparent" }}
     >
-      <span className="text-sm font-medium sm:text-base" style={{ color: "#E1E0CC" }}>
+      <span className="text-sm font-medium sm:text-base" style={{ color: "#C0C0C0" }}>
         {question}
       </span>
       <motion.span
@@ -33,7 +33,7 @@ export const AccordionItem = ({ question, answer, isOpen, onToggle }: AccordionI
       >
         <ChevronDown
           className="h-4 w-4"
-          style={{ color: "rgba(225, 224, 204, 0.7)" }}
+          style={{ color: "rgba(192, 192, 192, 0.7)" }}
         />
       </motion.span>
     </motion.button>
@@ -46,7 +46,7 @@ export const AccordionItem = ({ question, answer, isOpen, onToggle }: AccordionI
           transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div className="border-t border-white/10 px-5 py-4">
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
               {answer}
             </p>
           </div>

@@ -12,7 +12,7 @@ interface FormFieldProps {
 export const FormField = ({ label, error, children, className }: FormFieldProps) => (
   <div className={cn("flex flex-col gap-2", className)}>
     {label && (
-      <label className="text-xs font-medium uppercase tracking-widest" style={{ color: "rgba(225, 224, 204, 0.45)" }}>
+      <label className="text-xs font-medium uppercase tracking-widest" style={{ color: "rgba(192, 192, 192, 0.45)" }}>
         {label}
       </label>
     )}

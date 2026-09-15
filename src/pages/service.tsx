@@ -50,8 +50,8 @@ export default function ServicePage() {
       </Section>
 
       <CTASection
-        title="Ready to build?"
-        text="Tell us what you're trying to build and let's make the first real version."
+        title="Ready to make it magnetic?"
+        text="Tell us about your brand and goals — we'll build the right creative and performance approach around it."
         to="/contact"
         cta={`${service.cta}`}
       />

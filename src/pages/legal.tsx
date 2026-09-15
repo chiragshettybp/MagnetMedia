@@ -34,7 +34,7 @@ const legalDocs: Record<
       },
       {
         h: "Your rights",
-        p: "You can contact us to request access to, correction of, or deletion of your personal information at outmaded@gmail.com.",
+        p: "You can contact us to request access to, correction of, or deletion of your personal information at magnetmedia@gmail.com.",
       },
     ],
   },
@@ -48,7 +48,7 @@ const legalDocs: Record<
       },
       {
         h: "Services",
-        p: "Details of any project or service engagement are agreed separately between you and OutMaded.",
+        p: "Details of any project or service engagement are agreed separately between you and Magnet Media.",
       },
       {
         h: "Project agreements",
@@ -56,7 +56,7 @@ const legalDocs: Record<
       },
       {
         h: "Intellectual property",
-        p: "Content on this site belongs to OutMaded unless stated otherwise. Any work we build for you transfers per your agreement.",
+        p: "Content on this site belongs to Magnet Media unless stated otherwise. Any work we build for you transfers per your agreement.",
       },
       {
         h: "Liability",
@@ -116,7 +116,7 @@ const legalDocs: Record<
       },
       {
         h: "Feedback",
-        p: "If something makes the site hard to use, email outmaded@gmail.com and we'll fix it.",
+        p: "If something makes the site hard to use, email magnetmedia@gmail.com and we'll fix it.",
       },
     ],
   },
@@ -137,18 +137,18 @@ export default function LegalPage({ slug: propSlug }: { slug?: string }) {
         <div className="mx-auto flex max-w-3xl flex-col gap-8">
           {doc.sections.map((s) => (
             <div key={s.h}>
-              <h2 className="text-lg font-medium tracking-tight" style={{ color: "#E1E0CC" }}>
+              <h2 className="text-lg font-medium tracking-tight" style={{ color: "#C0C0C0" }}>
                 {s.h}
               </h2>
-              <p className="mt-2 text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+              <p className="mt-2 text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
                 {s.p}
               </p>
             </div>
           ))}
-          <p className="text-xs" style={{ color: "rgba(225, 224, 204, 0.4)" }}>
+          <p className="text-xs" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
             Questions? Email{" "}
-            <a href="mailto:outmaded@gmail.com" className="hover:text-white">
-              outmaded@gmail.com
+            <a href="mailto:magnetmedia@gmail.com" className="hover:text-white">
+              magnetmedia@gmail.com
             </a>
             . Other pages:{" "}
             <Link to="/sitemap" className="hover:text-white">

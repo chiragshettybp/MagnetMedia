@@ -20,9 +20,9 @@ export const ChoiceChip = ({ selected, onClick, children, className }: ChoiceChi
       className
     )}
     style={{
-      color: selected ? "#0a0a0a" : "rgba(225, 224, 204, 0.7)",
-      background: selected ? "#E1E0CC" : "transparent",
-      borderColor: selected ? "#E1E0CC" : "rgba(225, 224, 204, 0.15)",
+      color: selected ? "#0a0a0a" : "rgba(192, 192, 192, 0.7)",
+      background: selected ? "#C0C0C0" : "transparent",
+      borderColor: selected ? "#C0C0C0" : "rgba(192, 192, 192, 0.15)",
       WebkitTapHighlightColor: "transparent",
     }}
   >

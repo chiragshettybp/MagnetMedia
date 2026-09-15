@@ -85,9 +85,8 @@ export const WordsPullUpMultiStyle = ({ segments, className = "", style }: Words
 /* ---------------- Hero ---------------- */
 const navItems = [
   { label: "Services", to: "/services" },
-  { label: "Solutions", to: "/solutions" },
+  { label: "Approach", to: "/process" },
   { label: "Work", to: "/work" },
-  { label: "Products", to: "/products" },
   { label: "About", to: "/about" },
 ];
 
@@ -124,7 +123,7 @@ const PrismaHero = () => {
             muted
             playsInline
             className="absolute inset-0 h-full w-full object-cover"
-            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+            src="/hero%20video.mp4"
           />
         )}
 
@@ -137,10 +136,10 @@ const PrismaHero = () => {
         {/* Navbar */}
         <nav className="absolute left-0 right-0 top-0 z-20 flex items-center justify-between px-2 sm:px-4 md:px-8">
           <Link to="/about/story" className="flex items-center gap-2 rounded-b-2xl bg-black py-2 pl-3 pr-5 transition-transform duration-150 active:scale-[0.97] md:pl-5 md:pr-8">
-            <img src="/logo.png" alt="OutMaded logo" className="h-6 w-6 rounded-full object-cover sm:h-7 sm:w-7" />
+            <img src="/logo.png" alt="Magnet Media logo" className="h-6 w-6 rounded-full object-cover sm:h-7 sm:w-7" />
             <span
               className="text-[10px] transition-colors duration-200 sm:text-xs md:text-sm"
-              style={{ color: "rgba(225, 224, 204, 0.8)" }}
+              style={{ color: "rgba(192, 192, 192, 0.8)" }}
             >
               Our Story
             </span>
@@ -151,9 +150,9 @@ const PrismaHero = () => {
                 key={item.to}
                 to={item.to}
                 className="text-[10px] transition-colors duration-200 sm:text-xs md:text-sm"
-                style={{ color: "rgba(225, 224, 204, 0.8)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#E1E0CC")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(225, 224, 204, 0.8)")}
+                style={{ color: "rgba(192, 192, 192, 0.8)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#C0C0C0")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(192, 192, 192, 0.8)")}
               >
                 <span className="inline-block transition-transform duration-150 active:scale-95">
                   {item.label}
@@ -170,9 +169,9 @@ const PrismaHero = () => {
             <div className="col-span-12 lg:col-span-8">
               <h1
                 className="font-medium leading-[0.85] tracking-[-0.07em] text-[18vw] sm:text-[17vw] md:text-[16vw] lg:text-[15vw] xl:text-[14vw] 2xl:text-[14vw]"
-                style={{ color: "#E1E0CC" }}
+                style={{ color: "#C0C0C0" }}
               >
-                <WordsPullUp text="OutMaded" showAsterisk />
+                <WordsPullUp text="Magnet Media" showAsterisk />
               </h1>
             </div>
 
@@ -185,7 +184,7 @@ const PrismaHero = () => {
                 className="text-xs text-primary/70 sm:text-sm md:text-base"
                 style={{ lineHeight: 1.2 }}
               >
-                OutMaded is a student-led software and innovation startup built by college students who turn ideas, problems, and opportunities into real, usable digital products. We combine software development, modern technology, and AI to make product development faster, smarter, and easier—from the first idea to a working product.
+                Magnet Media is a modern creative and performance marketing agency. We help brands get noticed, build attention, and turn that attention into growth — through ads, content, video, and creative strategy that make people stop, watch, remember, and act.
               </motion.p>
 
               <Link to="/start-project" className="inline-flex self-start">
@@ -193,9 +192,9 @@ const PrismaHero = () => {
                   pressScale={0.97}
                   className="group inline-flex items-center gap-2 rounded-full bg-primary py-1 pl-5 pr-1 text-sm font-medium text-black transition-all duration-200 hover:gap-3 sm:text-base"
                 >
-                  Join the Build
+                  Work With Us
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-black transition-transform duration-200 group-hover:scale-110 sm:h-10 sm:w-10">
-                    <ArrowRight className="h-4 w-4" style={{ color: "#E1E0CC" }} />
+                    <ArrowRight className="h-4 w-4" style={{ color: "#C0C0C0" }} />
                   </span>
                 </Pressable>
               </Link>

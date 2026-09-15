@@ -35,26 +35,26 @@ export default function WorkProjectPage() {
           <div className="flex flex-col gap-10">
             <div>
               <SectionTitle eyebrow="The problem" title="What existed before" />
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
                 {project.problem}
               </p>
             </div>
             <div>
               <SectionTitle eyebrow="The idea" title="The proposed solution" />
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
                 {project.idea}
               </p>
             </div>
             <div>
               <SectionTitle eyebrow="The product" title="What was built" />
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
                 {project.product}
               </p>
             </div>
             {project.ai && (
               <div>
                 <SectionTitle eyebrow="AI" title="How AI fits in" />
-                <p className="text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
                   {project.ai}
                 </p>
               </div>
@@ -80,10 +80,10 @@ export default function WorkProjectPage() {
       </Section>
 
       <CTASection
-        title="Have an idea like this?"
-        text="Let's build it — properly, with the right technology."
+        title="Want this for your brand?"
+        text="Tell us about your brand and we'll build the right creative and performance approach around it."
         to="/start-project"
-        cta="Let's build it"
+        cta="Make my brand magnetic"
       />
     </PageLayout>
   );

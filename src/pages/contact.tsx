@@ -30,17 +30,17 @@ export default function Contact() {
     <PageLayout>
       <PageHero
         eyebrow="Contact"
-        title="Let's talk about what you're building."
+        title="Let's talk about your brand."
         text="Email, socials, or a project enquiry — however you reach us, we reply."
       />
 
       <Section className="pb-16">
-        <div className="mb-10 flex flex-col gap-2 text-sm" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
-          <a href="mailto:outmaded@gmail.com" className="inline-flex items-center gap-2 transition-colors duration-200 hover:text-white">
+        <div className="mb-10 flex flex-col gap-2 text-sm" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
+          <a href="mailto:magnetmedia@gmail.com" className="inline-flex items-center gap-2 transition-colors duration-200 hover:text-white">
             <Mail className="h-4 w-4" />
-            outmaded@gmail.com
+            magnetmedia@gmail.com
           </a>
-          <p className="text-xs" style={{ color: "rgba(225, 224, 204, 0.4)" }}>
+          <p className="text-xs" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
             Socials: coming as we ship things worth sharing.
           </p>
         </div>
@@ -56,9 +56,9 @@ export default function Contact() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.15, type: "spring", stiffness: 400, damping: 25 }}
-              className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#E1E0CC]/10"
+              className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#C0C0C0]/10"
             >
-              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="#E1E0CC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="#C0C0C0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <motion.path
                   d="M5 12l5 5L19 7"
                   initial={{ pathLength: 0 }}
@@ -67,10 +67,10 @@ export default function Contact() {
                 />
               </svg>
             </motion.div>
-            <h2 className="text-2xl font-medium tracking-tight" style={{ color: "#E1E0CC" }}>
+            <h2 className="text-2xl font-medium tracking-tight" style={{ color: "#C0C0C0" }}>
               Message sent. Thanks.
             </h2>
-            <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+            <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
               We'll get back to you as soon as we can. While you wait — browse what we've already built.
             </p>
             <div className="mt-8 flex justify-center">
@@ -104,7 +104,7 @@ export default function Contact() {
               onChange={(e) => setCompany(e.target.value)}
             />
             <Input
-              placeholder="Project type (website, software, AI, MVP, automation…)"
+              placeholder="Project type (ads, content, video, social, brand, strategy…)"
               value={projectType}
               onChange={(e) => setProjectType(e.target.value)}
             />
@@ -133,7 +133,7 @@ export default function Contact() {
                 <>
                   Start a Project
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black transition-transform duration-200 group-hover:scale-110">
-                    <ArrowRight className="h-4 w-4" style={{ color: "#E1E0CC" }} />
+                    <ArrowRight className="h-4 w-4" style={{ color: "#C0C0C0" }} />
                   </span>
                 </>
               )}

@@ -22,7 +22,7 @@ export const PageHero = ({
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           className="mb-4 text-xs font-medium uppercase tracking-widest"
-          style={{ color: "rgba(225, 224, 204, 0.45)" }}
+          style={{ color: "rgba(192, 192, 192, 0.45)" }}
         >
           {eyebrow}
         </motion.p>
@@ -32,7 +32,7 @@ export const PageHero = ({
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className="max-w-4xl font-medium leading-[1.02] tracking-[-0.04em] text-[clamp(2.5rem,8vw,6.5rem)]"
-        style={{ color: "#E1E0CC" }}
+        style={{ color: "#C0C0C0" }}
       >
         {title}
       </motion.h1>
@@ -42,7 +42,7 @@ export const PageHero = ({
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 max-w-2xl text-sm leading-relaxed sm:text-base"
-          style={{ color: "rgba(225, 224, 204, 0.7)" }}
+          style={{ color: "rgba(192, 192, 192, 0.7)" }}
         >
           {text}
         </motion.p>
@@ -65,16 +65,16 @@ export const SectionTitle = ({ eyebrow, title, text }: { eyebrow?: string; title
   <Reveal className="mb-8 flex flex-col gap-3 md:mb-12 md:flex-row md:items-end md:justify-between">
     <div>
       {eyebrow && (
-        <p className="mb-2 text-xs font-medium uppercase tracking-widest" style={{ color: "rgba(225, 224, 204, 0.45)" }}>
+        <p className="mb-2 text-xs font-medium uppercase tracking-widest" style={{ color: "rgba(192, 192, 192, 0.45)" }}>
           {eyebrow}
         </p>
       )}
-      <h2 className="max-w-2xl text-2xl font-medium tracking-[-0.02em] sm:text-3xl md:text-4xl" style={{ color: "#E1E0CC" }}>
+      <h2 className="max-w-2xl text-2xl font-medium tracking-[-0.02em] sm:text-3xl md:text-4xl" style={{ color: "#C0C0C0" }}>
         {title}
       </h2>
     </div>
     {text && (
-      <p className="max-w-md text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+      <p className="max-w-md text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
         {text}
       </p>
     )}
@@ -89,7 +89,7 @@ export const ArrowButton = ({ to, children }: { to: string; children: ReactNode 
     >
       {children}
       <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black transition-transform duration-200 group-hover:scale-110">
-        <ArrowRight className="h-4 w-4" style={{ color: "#E1E0CC" }} />
+        <ArrowRight className="h-4 w-4" style={{ color: "#C0C0C0" }} />
       </span>
     </Pressable>
   </Link>
@@ -100,7 +100,7 @@ export const GhostLink = ({ to, children }: { to: string; children: ReactNode })
     <Pressable
       pressScale={0.97}
       className="group inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:text-white"
-      style={{ color: "#E1E0CC" }}
+      style={{ color: "#C0C0C0" }}
     >
       {children}
       <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -113,10 +113,10 @@ export const ListGrid = ({ items }: { items: string[] }) => (
     {items.map((i, idx) => (
       <Reveal key={i} delay={idx * 0.04} y={10}>
         <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-3">
-          <span className="mt-0.5 text-xs" style={{ color: "rgba(225, 224, 204, 0.4)" }}>
+          <span className="mt-0.5 text-xs" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
             {String(idx + 1).padStart(2, "0")}
           </span>
-          <span className="text-sm" style={{ color: "rgba(225, 224, 204, 0.85)" }}>
+          <span className="text-sm" style={{ color: "rgba(192, 192, 192, 0.85)" }}>
             {i}
           </span>
         </div>
@@ -131,7 +131,7 @@ export const FlowText = ({ steps }: { steps: string[] }) => (
       <div key={s} className="flex flex-wrap items-center gap-2">
         <code
           className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs sm:text-sm"
-          style={{ color: "rgba(225, 224, 204, 0.9)" }}
+          style={{ color: "rgba(192, 192, 192, 0.9)" }}
         >
           {s}
         </code>
@@ -142,7 +142,7 @@ export const FlowText = ({ steps }: { steps: string[] }) => (
 );
 
 const ArrowDown = () => (
-  <span className="text-xs px-2" style={{ color: "rgba(225, 224, 204, 0.4)" }}>
+  <span className="text-xs px-2" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
     ↓
   </span>
 );
@@ -161,11 +161,11 @@ export const CTASection = ({
   <Section className="pb-20 md:pb-28">
     <Reveal className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-transparent px-6 py-14 text-center md:px-12 md:py-20">
       <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.35] mix-blend-overlay" />
-      <h2 className="mx-auto max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl md:text-5xl" style={{ color: "#E1E0CC" }}>
+      <h2 className="mx-auto max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl md:text-5xl" style={{ color: "#C0C0C0" }}>
         {title}
       </h2>
       {text && (
-        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
           {text}
         </p>
       )}
@@ -180,7 +180,7 @@ export const QuoteBlock = ({ text }: { text: string }) => (
   <Reveal>
     <blockquote
       className="border-l-2 pl-5 text-lg font-medium leading-snug sm:text-xl"
-      style={{ borderColor: "rgba(225, 224, 204, 0.3)", color: "#E1E0CC" }}
+      style={{ borderColor: "rgba(192, 192, 192, 0.3)", color: "#C0C0C0" }}
     >
       {text}
     </blockquote>
@@ -190,7 +190,7 @@ export const QuoteBlock = ({ text }: { text: string }) => (
 export const Pill = ({ children }: { children: ReactNode }) => (
   <span
     className="rounded-full border border-white/15 px-3 py-1 text-xs"
-    style={{ color: "rgba(225, 224, 204, 0.8)" }}
+    style={{ color: "rgba(192, 192, 192, 0.8)" }}
   >
     {children}
   </span>

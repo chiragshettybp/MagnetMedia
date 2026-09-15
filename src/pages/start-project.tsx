@@ -9,17 +9,18 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Pressable } from "@/components/ui/pressable";
 
 const needOptions = [
-  "Website",
-  "Custom software",
-  "AI solution",
-  "MVP",
-  "Automation",
-  "Existing product improvement",
+  "Meta Ads",
+  "Content Creation",
+  "Video Editing",
+  "Creative Strategy",
+  "Social Media",
+  "Brand Creative",
+  "Performance Creative",
   "Not sure yet",
 ];
 
 const labelCls = "mb-2 block text-xs font-medium uppercase tracking-widest";
-const labelStyle = { color: "rgba(225, 224, 204, 0.45)" as const };
+const labelStyle = { color: "rgba(192, 192, 192, 0.45)" as const };
 
 export default function StartProject() {
   const [sent, setSent] = useState(false);
@@ -48,8 +49,8 @@ export default function StartProject() {
     <PageLayout>
       <PageHero
         eyebrow="Start a Project"
-        title="Have an idea? Let's make it real."
-        text="Tell us what you're trying to build. We'll figure out the right technology, then ship the first real version."
+        title="Let's make your brand magnetic."
+        text="Tell us about your brand, audience, and goals. We'll figure out the right creative and performance approach."
       />
 
       <Section className="pb-20">
@@ -64,9 +65,9 @@ export default function StartProject() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.15, type: "spring", stiffness: 400, damping: 25 }}
-              className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#E1E0CC]/10"
+              className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#C0C0C0]/10"
             >
-              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="#E1E0CC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="#C0C0C0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <motion.path
                   d="M5 12l5 5L19 7"
                   initial={{ pathLength: 0 }}
@@ -75,15 +76,15 @@ export default function StartProject() {
                 />
               </svg>
             </motion.div>
-            <h2 className="text-2xl font-medium tracking-tight" style={{ color: "#E1E0CC" }}>
+            <h2 className="text-2xl font-medium tracking-tight" style={{ color: "#C0C0C0" }}>
               Your idea is on its way.
             </h2>
-            <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+            <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
               We'll read it carefully and get back to you about the next step. In the meantime, the
               best ideas are the ones being built.
             </p>
             <div className="mt-8 flex justify-center">
-              <ArrowButton to="/work">See what we've built</ArrowButton>
+              <ArrowButton to="/work">See our work</ArrowButton>
             </div>
           </motion.div>
         ) : (
@@ -136,7 +137,7 @@ export default function StartProject() {
               <Textarea
                 required
                 rows={5}
-                placeholder="What are you trying to build? What problem does it solve? Who is it for? What features do you need?"
+                placeholder="What are you trying to achieve? Who is your audience? What platforms or services do you need?"
                 value={idea}
                 onChange={(e) => setIdea(e.target.value)}
               />
@@ -178,7 +179,7 @@ export default function StartProject() {
                 <>
                   Submit
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black transition-transform duration-200 group-hover:scale-110">
-                    <ArrowRight className="h-4 w-4" style={{ color: "#E1E0CC" }} />
+                    <ArrowRight className="h-4 w-4" style={{ color: "#C0C0C0" }} />
                   </span>
                 </>
               )}

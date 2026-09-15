@@ -10,8 +10,8 @@ export default function Services() {
     <PageLayout>
       <PageHero
         eyebrow="Services"
-        title="Build the product your idea deserves."
-        text="From business websites to custom software, AI-powered products, MVPs, and automation — we turn ideas into working digital products."
+        title="Make brands stop, watch, and act."
+        text="From Meta ads and performance creative to content, video, social, and strategy — we build marketing that turns attention into growth."
       />
 
       <Section className="pb-8">
@@ -23,15 +23,15 @@ export default function Services() {
                 className="group relative flex h-full flex-col justify-between gap-8 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-200 hover:border-white/25 active:scale-[0.985] md:p-8"
               >
               <div className="flex items-start justify-between">
-                <span className="text-xs" style={{ color: "rgba(225, 224, 204, 0.4)" }}>
+                <span className="text-xs" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
               <div>
-                <h3 className="text-xl font-medium tracking-tight sm:text-2xl" style={{ color: "#E1E0CC" }}>
+                <h3 className="text-xl font-medium tracking-tight sm:text-2xl" style={{ color: "#C0C0C0" }}>
                   {s.name}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed" style={{ color: "rgba(225, 224, 204, 0.7)" }}>
+                <p className="mt-2 text-sm leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.7)" }}>
                   {s.short}
                 </p>
               </div>
@@ -41,7 +41,7 @@ export default function Services() {
                   <Pill>{s.items[1]}</Pill>
                   <Pill>{s.items[2]}</Pill>
                 </div>
-                <ArrowRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" style={{ color: "#E1E0CC" }} />
+                <ArrowRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" style={{ color: "#C0C0C0" }} />
               </div>
             </Link>
             </Reveal>
@@ -51,13 +51,13 @@ export default function Services() {
 
       <Section className="pb-16 pt-8 md:pt-16">
         <div className="max-w-2xl">
-          <QuoteBlock text="We're not simply selling websites or writing code — we're focused on building products. Solve the problem with the right technology." />
+          <QuoteBlock text="We don't believe in creating content just to fill a content calendar. We create attention-first marketing designed to drive measurable business outcomes." />
         </div>
       </Section>
 
       <CTASection
         title="Not sure what you need?"
-        text="Tell us what you're trying to do. We'll figure out the right technology together."
+        text="Tell us about your brand, audience, and goals. We'll figure out the right approach."
         to="/contact"
         cta="Talk to us"
       />
